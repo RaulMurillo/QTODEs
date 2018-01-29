@@ -1,0 +1,672 @@
+\chapter{Appendix. Basic concepts and theorems of the ODEs theory}
+\section{Definitions}
+Under the \emph{ordinary differential equation} we understand the equation of the form
+\begin{equation}
+\label{6.1}
+\frac{dx}{dt}=\dot{x}=v(t,x),
+\end{equation}
+where $t\in I\subset \mathbb{R}$ is real time ($I$ is an open interval), $x$ belongs to the phase space (manifold) $M$ and $v$ is time-dependent on the vector field on $M$, $v:I\times M\longmapsto TM$ corresponds to $v(t,x)\in T_{x}M$. Often $M = U$ is a subset of the open euclidean space $\mathbb{R}^{n}$; then $v:I\times U\longmapsto \mathbb{R}^{n}$ and we are talking about a system of ordinary differential equations. If $v$ does not depend on time, $v = v (x)$, then equation \eqref{6.1} is an \emph{autonomous equation} (and $v$ is an \emph{autonomous vector field}), otherwise we are dealing with a non-autonomous equation. The space $I \times M$ is called the \emph{extended phase space}.
+
+We call \emph{solution} of equation \eqref{6.1} to any differentiable curve $\varphi :J\longmapsto M$, $J\subset I$, which satisfies the equation
+$$
+\frac{d\varphi }{dt}(t)\equiv v(t;\varphi (t)).
+$$
+
+We call \emph{initial value problem} to the following two conditions:
+\begin{equation}
+\label{6.2}
+\dot{x}=v(t,x),\text{ \ \ }x(t_{0})=x_{0},
+\end{equation}
+the second of which is called the \emph{initial condition}. The \emph{solution to the initial value problem} \eqref{6.2} is the solution
+$$
+\varphi (t)=\varphi (t;x_{0},t_{0})
+$$
+of the equation \eqref{6.1}, which has the property $\varphi (t_{0})=x_{0}.$
+
+If $\varphi (t)$ is a solution of the system \eqref{6.1}, then the curve $\left\{ \left( t,\varphi (t)\right) :t\in J\right\} \subset I\times M$ (i.e. the graph of the solution) is called \emph{integral curve}; if, in addition, the system \eqref{6.1} is autonomous, then the curve $\left\{ \varphi (t):t\in J\right\} $ (i.e. the image of the solution) is called \emph{phase curve}.
+
+\begin{remark}\label{remark:6.1}
+	By entering a new time $\tau$, we can rewrite the non-autonomous equation \eqref{6.1} in the form of the following autonomous system
+	\begin{equation}
+	\label{6.3}
+	\frac{dt}{d\tau }=1,\text{ \ }\frac{dx}{d\tau }=v(t,x)
+	\end{equation}
+	in the extended phase space. Then, the integral curves for equation \eqref{6.1} will turn out to be phase curves for the system \eqref{6.3}.
+\end{remark}
+
+The \emph{differential equation of the order $n$}, i.e.
+\begin{equation}
+\label{6.4}
+\frac{d^{n}x}{dx^{n}}=x^{(n)}=f(t,x,x^{(1)},\ldots ,x^{(n-1)}),\text{ \ }%
+t\in I,\text{\ }x\in \mathbb{R},
+\end{equation}
+is replaced by the system of first order equations
+\begin{equation}
+\label{6.5}
+\dot{y}_{1}=y_{2},\text{ }\dot{y}_{2}=y_{3},\ldots ,\text{ }\dot{y}%
+_{n-1}=y_{n},\text{ }\dot{y}_{n}=f(t,y_{1},\ldots ,y_{n})
+\end{equation}
+by the substitution $x=y_{1},$ $x^{(1)}=y_{2},\ldots$, $x^{(n-1)} = y_{n}$. The natural initial condition for the equation \eqref{6.4} is
+\begin{equation}
+\label{6.6}
+x(t_{0})=x_{0},\text{ }x^{(1)}(t_{0})=x_{1},\ldots ,\text{\ }%
+x^{(n-1)}(t_{0})=x_{n-1}.
+\end{equation}
+Note that by using the trick from Remark \ref{remark:6.1}, we can substitute (in general) the non-autonomous system \eqref{6.5} with the appropriate autonomous system in $\mathbb{R}^{n+1}.$
+
+\begin{remark}
+	In books on differential equations, the ``implicit equations with respect to the derivative", of type
+	\begin{equation}
+	\label{6.7}
+	F(t,x,\dot{x})=0,\text{ \ \ }t\in \mathbb{R},\text{ \ }x\in \mathbb{R}
+	\end{equation}
+	are also considered. It turns out that if the equation $F(t,x,p)=0$ can be solved around a certain point $\left(t_{0}, x_{0}, p_{0}\right) $ in the form of $x=g(t,p)$, then the equation \eqref{6.7} can be rewritten in the form of an autonomous system
+	$$
+	\frac{dt}{d\tau }=g_{p}^{\prime }(t,p),\text{ \ }\frac{dp}{d\tau } = p-g_{t}^{\prime }(t,p),
+	$$
+	where $\tau$ is the new `time'. Indeed, we have $\frac{dx}{d\tau }%
+	=\frac{dx}{dt}\frac{dt}{d\tau }=p\frac{dt}{d\tau }.$ Thus, by differentiating the identity $x(\tau) = g(t(\tau ), p(\tau ))$, we get the condition $p\frac{dt}{d\tau }\equiv g_{t}^{\prime }\frac{dt}{d\tau } + g_{p}^{\prime }\frac{dp}{d\tau }.$ It is satisfied for the above vector field.
+	
+	A similar system can be written when the equation $F=0$ is solved with respect to $t$, and also when $x\in \mathbb{R}^{n}$ and $F\in	\mathbb{R}^{n}$. In this script, equations of type \eqref{6.7} are not studied, but we cited them to demonstrate a certain universal property of autonomous differential equations.
+\end{remark}
+
+The concept of a phase stream is connected with the autonomous equation
+\begin{equation}
+\label{6.8}
+\dot{x}=v(x).
+\end{equation}
+Note that the solutions $\varphi (t;x_{0},0)$ of the equation \eqref{6.8} with the initial condition $x(0)=x_{0}$ ask the mapping family
+$$
+g^{t}:D_{t}\longmapsto M,\text{ \ }x_{0}\longmapsto \varphi (t;x_{0},0),
+$$
+where $D_{t}$ is the mapping field of $g^t$. This family should fulfill two natural properties of
+\begin{eqnarray}
+g^{0} &=&id,  \label{6.9} \\
+g^{t}\circ g^{s} &=&g^{t+s}.  \label{6.10}
+\end{eqnarray}
+Property \eqref{6.9} is a definition of the initial condition. Property \eqref{6.10}, which should be satisfied for $x_{0}\in D_{s}\cap
+\left( g^{s}\right) ^{-1}(D_{t})$, means that if we start at time $0$ from point $x_0$ and we get (along the solution) to the point $y_{0}=g^{s}(x_{0})$ and then reset the stopwatch and go with $y_{0}$ after time $t$, then we get to that same point as if we were going after the time $t+s$ with $x_{0}$ without resetting the stopwatch. Of course, here it is important that $v(s,y_{0})=v(0,y_{0})=v(y_{0})$ (autonomy).
+The family $\left\{ g^{t}\right\} _{t\in I}$, $g^{t}:D_{t}\longmapsto M$ that satisfies the properties \eqref{6.9} - \eqref{6.10} is called the \emph{local phase flow}. The family of
+$$
+g^{t}:M\longmapsto M,\text{ \ }t\in \mathbb{R},
+$$
+(global) diffeomorphisms of phase space $M$, satisfying the properties \eqref{6.9} - \eqref{6.10} is called \emph{phase stream on $M$}. In other words, the mapping $t\longmapsto g^{t}$ is a homomorphism from the group $R$ to the group $\textrm{Diff}(M)$ of the diffeomorphisms of the manifold $M$.
+
+\begin{example}
+	The equation
+	$$
+	\dot{x}=x^{2}+1
+	$$
+	defines the global vector field on the projective space $\mathbb{RP}^{1} = \mathbb{R}\cup \infty $ (where the coordinate $y=1/x$ in the environment $x=\infty $ satisfies the equation $\dot{y}=-1-y^{2}$). Here, the local phase stream turns out to be a phase stream on $\mathbb{RP}^{1}$ composed of Möbius transformations
+	$$
+	g^{t}(x_{0})=\frac{x_{0}\cos t+\sin t}{\cos t-x_{0}\sin t}.
+	$$
+\end{example}
+
+\begin{remark}
+	In the case of a non-autonomous vector field we deal with a 2-parameter family of transformations
+	$$
+	g_{s}^{t}:M\longmapsto M
+	$$
+	(more specifically, with its local version) defined in such a way that $g_{s}^{t}(x_{0})=\varphi (t;x_{0};s)$, i.e. the value at the time $t$ of the solution starting from $x_0$ at the moment $s$. There are obvious identities
+	$$
+	g_{t}^{t}=id,\text{ \ \ }g_{s}^{t}\circ g_{u}^{s}=g_{u}^{t}.
+	$$
+\end{remark}
+
+\section{Theorems}
+Below the reader will find a number of theorems that are fundamental in the theory of ordinary differential equations and which are given without evidence. For more details, please refer to \cite{Ar1},\cite{Pal}.
+
+\begin{theorem}\label{theo:6.5}
+	\emph{(On the existence and uniqueness of local solutions).}
+	Let's suppose that the field $v (t, x)$ is of class $C^1$ on an open set $I \times U \subset \mathbb{R}\times \mathbb{R}^{n}$. Let $(t_{0},x_{\ast })\in I\times U$.
+	
+	Then there is the segment $I_{0}\subset I$, containing the starting moment $t_{0}$, and a neighborhood $U_{0}\subset U$ of point $x_{\ast }$ such that for any $x_{0}\in U_{0}$ the initial value problem $dot{x}=v(t;x)$, $x(t_{0})=x_{0}$ has exactly one solution $\varphi (t;x_{0})$.
+	
+	In addition, the mapping
+	\begin{equation}
+	\label{6.11}
+	\left( t,x_{0}\right) \longmapsto \varphi (t;x_{0})
+	\end{equation}
+	is continuous, and if the field $v(t,x)$ is analytical, then the mapping is also analytical.
+\end{theorem}
+
+We will remind that the basic idea of proof of this theorem consists in replacing the initial problem \eqref{6.2} with the integral equation
+\begin{equation}
+\label{6.12}
+\varphi (t;x_{0})=x_{0}+\int_{t_{0}}^{t}v(t,\varphi (s;x_{0}))ds.
+\end{equation}
+This equation is treated as a constant point equation $\varphi = \mathcal{T}(\varphi )$ for the $\mathcal{T}$ operator defined on the right side of the equation \eqref{6.12} operating in the appropriate Banach space of mappings $\varphi (t,x_{0})$. In general, this is the Banach space of continuous functions at $I_{0}\times U_{0}$ with the supremum norm, while narrowing condition for the $\mathcal{T}$ operator results from the Lipschitz condition with respect to $x$ for the field $v (t, x)$. In the analytical case, the chosen Banach space is the space of holomorphic functions in a certain area in $\mathbb{C}\times \mathbb{C}^{n}$ with the supremum norm (Task 6.25).
+
+\begin{example}
+	The equation
+	$$
+	\dot{x}=\frac{3}{2}\sqrt[3]{x}
+	$$
+	has two solutions with the same initial condition $x(0) = 0$: $\varphi _{1}(t)=0$ for $t<0$ and $\varphi _{1}(t) = t^{3/2}$ for $t\geq 0$ and $\varphi _{2}(t) \equiv 0$. This standard example shows how important the Lipschitz condition is; here it does not occur at $x = 0$.
+\end{example}
+
+\begin{theorem}\label{theo:6.7}
+	\emph{(On the dependence on the initial condition).}
+	If, in Theorem \ref{theo:6.5}, we assume that $v$ is of class $C^2$, then the mapping \eqref{6.11} will be of class $C^1$. More generally, if $v$ is of class $C^r$, $1 \leq r \leq \infty$, then $\varphi $ is of class $C^{r-1}$.
+\end{theorem}
+
+\begin{theorem}\label{theo:6.8}
+	\emph{(On the dependence on parameters).}\footnote{Some sources (e.g. \cite{Hart}, \cite{Hale}) show that the class $C^r$ depends on the solution of the parameters. For our purposes, class $C^{r-1}$ is sufficient, especially when considering the simplicity of the following sketch of the proof of this theorem.}
+	If the field $v$ depends on the additionally parameter $\lambda \in V\subset \mathbb{R}^{k}$ and $v(t,x;\lambda )$ is of class $C^r$, $r \geq 2$, then the solution $\varphi (t;x_{0};\lambda )$ is of class $C^{r-1}$.
+\end{theorem}
+
+The proofs of the last two theorems use the notion of equation in variations.
+
+\emph{Equation in variations with respect to the initial condition} is called the equation
+\begin{equation}
+\label{6.13}
+\dot{y}=A(t)y,\text{ \ \ }A(t)=\frac{\partial v}{\partial x}(t,\varphi
+_{0}(t)).
+\end{equation}
+Here $\varphi _{0}(t)$, $\varphi _{0}(t_{0})=x_{0}$, is a given solution, and the equation \eqref{6.13} is obtained by substituting the perturbation $x= \varphi_{0} (t) + \varepsilon y(t) + O(\varepsilon ^{2})$ ( with small $\varepsilon$) to the initial problem \eqref{6.2} with the initial condition $x(t_{0})=x_{0}+\varepsilon y_{0}$ and alignment terms of order $\varepsilon$.	 The partial derivative $partial \varphi /\partial (x_{0})_{j}$ of the solution with respect to the initial condition is obtained as a solution of the system \eqref{6.13} with the initial condition $y_{0}=e_{j}$ (where $(e_{j})$ is the standard base in $\mathbb{R}^{n}$).
+
+\emph{Equation in variations with a parameter} is called the equation
+\begin{equation}
+\label{6.14}
+\dot{y}=A(t)y+b(t),\text{ \ \ }b(t)=\frac{\partial v}{\partial \lambda }%
+(t,\varphi _{0}(t);\lambda _{0}).
+\end{equation}
+Here $\varphi _{0}(t)$ is a distinguished solution to the initial value problem $\dot{x}=v(t,x,\lambda _{0})$, $x(t_{0}) = x_{0}$, i.e. for a fixed parameter $\lambda =\lambda _{0}$, and the matrix $A(t)$ is same as in \eqref{6.13}. This equation is obtained by substituting $x=\varphi _{0}(t)+\varepsilon y(t)+O(\varepsilon ^{2})$ for the initial value problem $\dot{x}=v(t,x;\lambda _{0}+\epsilon \nu _{0})$, $x(t_{0})=x_{0}$, and comparing the linear terms with respect to the small $\varepsilon$.
+
+In the proofs of Theorems \ref{theo:6.7} and \ref{theo:6.8}, the problem comes down to the system $\dot{x}=v(t,x)$, $\dot{y}=\frac{\partial v}{\partial x}(t,x)y$ or to the system $\dot{x}=v(t,x;\lambda )$, $\dot{y} = \frac{\partial v}{\partial x} (t,x;\lambda )y + \frac{\partial v} {\partial \lambda }(t,x;\lambda )$ and applies Theorem \ref{theo:6.5} (Tasks 6.26 and 6.27).
+
+From the above theorems there are important conclusions about the qualitative behavior of the solutions of equation\eqref{6.1}.
+
+\begin{theorem}\label{theo:6.9}
+	\emph{(On the straightening for non-autonomous systems).}
+	If $v (t, x)$ is of class $r\geq 2$, and $\left( t_{0},x_{\ast }\right) \in I\times U\subset \mathbb{R}\times \mathbb{R}^{n}$, then there is a local diffeomorphism
+	$$
+	f:(t,x)\longmapsto (t,y),
+	$$
+	from the neighborhood of the point $\left( t_{0},x_{\ast }\right)$, which transforms the system \eqref{6.1} into the system
+	$$
+	\dot{y}=0.
+	$$
+\end{theorem}
+
+In the proof, the diffeomorphism $f$ is defined so that if the point $x=\varphi (t;x_{0},t_{0})$, i.e. it is the value of the solution after time $t$ and the initial condition $x(t_{0})=x_{0}$, then we put $y=x_{0}$ (Task 6.28).
+
+\begin{theorem}\label{theo:6.10}
+	\emph{(On the straightening for autonomous systems).}
+	If the autonomous vector field $v (x)$ is of class $C^{r}$, $r \geq 2$, on $U$ and the point $x_{\ast
+	}\in U$ is such that
+	\begin{equation}
+	\label{6.15}
+	v(x_{\ast })\not=0,
+	\end{equation}
+	there is a local diffeomorphism $f:x\longmapsto y$ from the neighborhood of point $x_{\ast }$, which transforms the system $\dot{x}=v(x)$ into the system
+	$$
+	\dot{y}_{1}=1,\text{ }\dot{y}_{2}=0,\ldots ,\text{ }\dot{y}_{n}=0.
+	$$
+\end{theorem}
+
+As can be guessed, the variable $y_1$ is the time $t$ of solutions $\varphi (t;x_{0})$, which starts at $t = 0$ from a hyperplane $H$ perpendicular to the vector $v (x_{\ast})$. The remaining variables $y_j$ derived from some coordinate system on the hyperplane $H$ and are constant along the solutions (Task 6.29).
+
+\begin{remark}
+	The above theorem can be called the first theorem of the qualitative theory of ordinary differential equations.\footnote{In English-language literature, it is called `Flow Box Theorem'.} It says that locally, each vector field satisfying the condition \eqref{6.15} is the same from a mathematical point of view. The condition \eqref{6.15} implies a certain simplicity of the vector field. In the first chapter of this script, it is examined the situation when this condition is violated.	
+\end{remark}
+
+\begin{theorem}\emph{(On the local phase flow).}
+	For the autonomous vector field $v (x)$ of class $C^r$, $r \geq 2$, there is a local phase flow $\left\{ g^{t}\right\}$, $x_{0}\longmapsto g^{t}(x_{0})$ (satisfying the conditions \eqref{6.9} - \eqref{6.10}) given by solutions $\varphi (t;x_{0})$ of initial value problem $\dot{x}=v(x)$, $x(0)=x_{0}$.
+\end{theorem}
+
+Of course, this theorem is an immediate consequence of the theorem on the existence and uniqueness of local solutions for the system \eqref{6.1} with the autonomous field $v (x)$.
+
+\begin{theorem}\emph{(On the extension of solutions).}
+	Let the field $v (t, x)$ be of class $C^r$, $r \geq 1$, in the open set $I\times U$ and let $F\subset U$ be a short subset. Then any local solution $\varphi (t;x_{0};t_{0})$ starting from $x_{0}\in F$ or is extended for all times $t_{0}\leq t<\infty $ while remaining in $F$, or goes out of $F$ after a finite time $T(x_{0})\geq t_{0}$.
+	
+	The same occurs for alternative solutions $\varphi
+	(t;x_{0};t_{0})$ at $t <t_0$.
+\end{theorem}
+
+In a sense, this theorem is obvious. The following example shows that the assumption of compactness $F$ is important.
+
+\begin{example}
+	The equation
+	$$
+	\dot{x}=x^{2},\text{ \ \ }x\in \mathbb{R},
+	$$
+	has solutions $\varphi =x_{0}/(1-tx_{0})$, which escape to infinity after the finite time $T=1/x_{0}.$
+\end{example}
+
+\section{Methods of solving}
+Below is a list of classes of ordinary differential equations, which can be integrated and methods for their integration are given. All the equations considered here have the form
+\begin{equation}
+\label{6.16}
+\frac{dy}{dx}=\frac{Q(x,y)}{P(x,y)}
+\end{equation}
+or the equivalent form of the \emph{Pfaffian equation}
+$$
+Q(x,y)dx-P(x,y)dy=0.
+$$
+
+\begin{example}
+	\emph{Separable equations}. These are the equations of the form
+	$$
+	\frac{dy}{dx}=\frac{Q(x)}{P(y)}.
+	$$
+	Of course, the solutions are given in the implicit form
+	$$
+	\int_{x_{0}}^{x}Q(z)dz=\int_{y_{0}}^{y}P(y)dy.
+	$$
+\end{example}
+
+\begin{example}
+	\emph{Homogeneous equations} are of the form
+	$$
+	\frac{dy}{dx}=f\left( y/x\right).
+	$$
+	Here the substitution $u=\frac{y}{x}$ leads to the equation with the separated variables
+	$$
+	x\frac{du}{dx}=f(u)-u.
+	$$
+	This class may include the form of the equation
+	$$
+	\frac{dy}{dx}=f\left( \frac{ax+by+\alpha }{cx+dy+\beta }\right) ,\text{ \ \ }%
+	\left\vert
+	\begin{array}{cc}
+	a & b \\
+	c & d%
+	\end{array}%
+	\right\vert \not=0.
+	$$
+	By moving the origin of the coordinate system to the point of intersection of lines $ax+by+\alpha =0$ and $cx+dy+\beta =0$, it becomes evidently homogeneous. When $ad-bc=0$, the equation is easily reduced to a variable with separated variables.
+\end{example}
+
+\begin{example}
+	\emph{Quasi-homogeneous equations} are characterized by invariance with respect to the symmetry of type
+	$$
+	x\longmapsto \lambda x,\text{ \ }y\longmapsto \lambda ^{\gamma }y,\text{ \ \
+		\ }\lambda \in \mathbb{R}\setminus 0,
+	$$
+	which generalizes analogous symmetry with $\gamma =1$ for a homogeneous equation. Here the substitution $u=y/x^{\gamma }$ leads to a equation with separated variables.
+\end{example}
+
+\begin{example}
+	The \emph{linear equations}
+	\begin{equation}
+	\label{6.17}
+	\frac{dy}{dx}=a(x)y+b(x)
+	\end{equation}
+	are divided into homogeneous ones, when $b(x)\equiv 0$, and inhomogeneous. The general solution of the homogeneous equation $\frac{dy}{dx}=a(x)y$ associated with the equation \eqref{6.17} has the form
+	$$
+	\varphi _{gen}=C\cdot \exp A(x),
+	$$
+	where $A (x)$ is a primitive function for the function $a (x)$. The general solution of the inhomogeneous equation is the sum of the general solution of the homogeneous equation $\varphi _{gen}$ and a particular solution $\varphi _{part}$ the inhomogeneous equation. We are looking for the last solution using the \emph{variation of constants method}, i.e. in the form
+	$$
+	\varphi _{part}=C(x)\cdot \exp A(x).
+	$$
+	After substituting for equation \eqref{6.17} we obtain the equation
+	$C^{\prime
+	}(x)=e^{-A(x)}b(x)$.
+	
+	The general solution is
+	\begin{equation}
+	\label{6.18}
+	y=e^{A(x)}C+\int^{x}e^{A(x)-A(z)}b(z)dz.
+	\end{equation}
+\end{example}
+
+\begin{example}
+	\emph{Bernoulli's equation}
+	$$
+	\frac{dy}{dx}=a(x)y+b(x)y^{n}
+	$$
+	is reduced to a linear equation by substituting
+	$$
+	z=y^{1-n}.
+	$$
+\end{example}
+
+\begin{example}
+	The equation with integrating factor is
+	$$
+	\frac{dy}{dx}=\frac{Q(x,y)}{P(x,y)}=\frac{-MH_{x}^{\prime }}{MH_{y}^{\prime }%
+	},
+	$$
+	or
+	$$
+	M(H_{x}^{\prime }dx+H_{y}^{\prime }dy)=MdH=0.
+	$$
+	Here $M = M (x, y)$ is the \emph{integrating factor} and $H = H (x, y)$ is the \emph{first integral} of the equation, i.e. the function $H$ is constant on the integral curves of the equation, $H(x,\varphi (x))\equiv \textrm{const}$. Of course, here the solutions $y=\varphi (x)$ are implicit in the form of the equation
+	$$
+	H(x,y)=h.
+	$$
+	
+	The natural question is how to guess from the form of the $P$ and $Q$ functions if there is an integrating factor and the first integral. It is convenient to operate the autonomous vector field
+	\begin{equation}
+	\label{6.19}
+	\dot{x}=P(x,y),\text{ \ \ }\dot{y}=Q(x,y)
+	\end{equation}
+	associated with the equation \eqref{6.16}.
+	
+	Note that the case of $M (x, y) \equiv 1$ with the first integral $H (x, y)$ corresponds to the situation when the system \eqref{6.19} is Hamiltonian with $H$ as a Hamilton function (Hamiltonian),
+	$$
+	\dot{x}=H_{y}^{\prime },\text{ \ \ }\dot{y}=-H_{x}^{\prime }.
+	$$
+	Of course, then we have
+	\begin{equation}
+	\textrm{div\,}V=P_{x}^{\prime }+Q_{y}^{\prime }\equiv 0,  \label{6.20}
+	\end{equation}
+	i.e. the divergence of the vector field $V = Q \partial _{x} + P \partial _{y}$ vanishes, or, equivalently,
+	$$
+	d\left( Qdx-Pdy\right) =0.
+	$$
+	\begin{figure}[!ht]
+		\centering
+		\includegraphics [scale=1.4]{jtrA1}
+		\caption{The definition of $H (x, y)$ does not depend on the choice of the path $\Gamma$.}
+		\label{fig:A1}
+	\end{figure}
+	It is a necessary condition for the system \eqref{6.19} for being Hamiltonian. When $\textrm{div}V\equiv 0$, one can define the function $H$ as follows:
+	$$
+	H(x,y)=\int_{\Gamma (x.y)}\left( Qdx-Pdy\right) ,
+	$$
+	where $\Gamma (x,y)$ is the path from a fixed point $\left(x_{0}, y_{0}\right) $ to $(x, y)$. If the area $U\subset \mathbb{R}^{2}$ in which the system \eqref{6.19} is defined is simply connected (any loop can contract to a point), the definition of $H (x, y)$ does not depend on the choice of path $\Gamma =\Gamma (x,y)$: the difference between this value and the value defined for another path $\Gamma ^{\prime }$ is the integral of the closed loop $\Gamma -\Gamma ^{\prime }$ (which limits the area of $\Omega$) from the 1-form $\omega =Qdx-Pdy$, which is closed, so the Stokes formula gives $\oint_{\Gamma -\Gamma ^{\prime }}\omega
+	=\iint_{\Omega }d\omega =0$ (see Figure \ref{fig:A1}).
+	
+	An example of the equation
+	$$
+	d\left( \textrm{arctg}\frac{y}{x}\right) =\frac{-y}{x^{2}+y^{2}}dx+\frac{x}{%
+		x^{2}+y^{2}}dy=0
+	$$
+	in $\mathbb{R}^{2}\setminus 0$, which fulfills the condition \eqref{6.20}, and has a local (but not global) first integral $H=\arg \left(
+	x+iy\right) $ shows that the assumption of simply connection is significant.
+	
+	The case when there is a non-trivial integrating factor $M$ is much more difficult. Let us quote here the result of M. Singer, which refers to the case when $P$ and $Q$ are polynomials.
+\end{example}
+
+\begin{theorem}\emph{(Singer).}
+	If the equation \eqref{6.16} with the polynomials $P$ and $Q$ has an integrating factor $M$ and the first integral, which can be presented in quadratures, the integral factor $M$ can be chosen in the so-called Darboux characters
+	$$
+	M=e^{g(x,y)}f_{1}^{a_{1}}(x,y)\ldots f_{r}^{a_{r}}(x,y),
+	$$
+	where $g (x, y)$ is a rational function, $f_j (x, y)$ are polynomials and $a_j \in C$.
+\end{theorem}
+
+We refer the reader to the book \cite{Zol2}, in which can find a definition of functions presented in quadratures and a proof of Singer's theorem.
+
+\section{Linear systems and equations}
+Linear systems of ordinary differential equations are generalizations of equations \eqref{6.17} and have the form
+\begin{equation}
+\label{6.21}
+\dot{x}=A(t)x+b(t),\text{ \ \ }t\in I\subset \mathbb{R},\text{ \ \ }x\in
+\mathbb{R}^{n}.
+\end{equation}
+In parallel, linear differential equations of the order n are considered in the form
+\begin{equation}
+\label{6.22}
+x^{(n)}+a_{n-1}(t)x^{(n-1)}+\ldots +a_{0}(t)x=b(t),\text{ \ \ }t\in I\subset
+\mathbb{R},\text{ \ \ }x\in \mathbb{R}.
+\end{equation}
+
+It is known that the solutions $x=\varphi (t;x_{0};t)$  of such systems and equations extend to the hole interval $I$ (Task 6.40). In the homogeneous case, i.e. when $b(t)\equiv 0$, the set of solutions creates a $n$-dimensional vector space. Each base of this space creates the so-called \emph{fundamental system} $\left( \varphi _{j}\right) _{j=1}^{n}$. Such a fundamental system is given by the \emph{fundamental matrix}
+$\mathcal{F}(t)=\left( \varphi
+_{1},\ldots ,\varphi _{n}\right) $
+in the case of the system \eqref{6.21} and
+$$
+\mathcal{F}(t)=\left(
+\begin{array}{ccc}
+\varphi _{1} & \ldots & \varphi _{n} \\
+\varphi _{1}^{(1)} & \ldots & \varphi _{n}^{(1)} \\
+\vdots & \ddots & \vdots \\
+\varphi _{1}^{(n-1)} & \ldots & \varphi _{n}^{(n-1)}%
+\end{array}%
+\right)
+$$
+in the case of equation \eqref{6.22}. The determinant of the fundamental matrix is called Wronskian
+\begin{equation}
+\label{6.23}
+W(t)=\det \mathcal{F}(t)
+\end{equation}
+(from the name of the Polish mathematician J. Hoene-Wroński).
+
+The general solution of the homogeneous system \eqref{6.21} (with $b \equiv 0$) has the form
+\begin{equation}
+\label{6.24}
+\varphi (t)=\mathcal{F}(t)\cdot C,
+\end{equation}
+where $C$ is a constant vector (determined from the initial conditions); in particular, when the fundamental system is selected so that $\mathcal{F}(t_{0})=I$, then the solution $\varphi (t)=\mathcal{F}(t)x_{0}$ satisfies the initial condition $\varphi (t_{0})=x_{0}$. In the case of the non-homogeneous equation \eqref{6.22} (with $b \not \equiv 0$), the general solution has the form
+$$
+\varphi (t)=\left( \mathcal{F}(t)\cdot C\right) _{1}=C_{1}\varphi
+_{1}(t)+\ldots +C_{n}\varphi _{n}(t),
+$$
+i.e. the first component of the vector standing to the right side of equation \eqref{6.24}.
+
+It is not difficult to guess that the general solution of a inhomogeneous system or equation (i.e. with $b(t)\not\equiv 0)$) is the sum of the general solution of the homogeneous equation $\varphi _{gen}$ and a particular solution of the inhomogeneous system or equation $\varphi _{part}$. To solve a inhomogeneous system or equation, knowing the fundamental matrix, we use the \emph{method of variation of constants}, i.e., we substitute $x = \mathcal{F}(t) \cdot C(t)$. By solving the appropriate equation for $C(t)$ we find the general solution of the system \eqref{6.21} in the form
+$$
+x=\mathcal{F}(t)C+\int_{t_{0}}^{t}\mathcal{F}(t)\mathcal{F}^{-1}(s)b(s)ds.
+$$
+Of course, the main problem is to find the fundamental matrix $\mathcal{F} (t)$.
+
+In the case when the matrix $A (t) = A$ in the system \eqref{6.21} or the coefficients $a_j (t) = a_j$ in the equation \eqref{6.22} do not depend on time, we are talking about a \emph{system with constant coefficients} or an \emph{equation with constant coefficients}. In this case, the fundamental matrix has the form
+$$
+\mathcal{F}(t)=\exp At=I+At+\frac{t^{2}}{2!}A^{2}+\ldots ,
+$$
+where
+$$
+A=\left(
+\begin{array}{ccccc}
+0 & 1 & 0 & \ldots & 0 \\
+0 & 0 & 1 & \ldots & 0 \\
+\vdots & \vdots & \vdots & \ddots & \vdots \\
+-a_{0} & -a_{1} & -a_{2} & \ldots & -a_{n-1}%
+\end{array}%
+\right)
+$$
+in the case of the equation.
+
+For the equation \eqref{6.21} with constant coefficients, the general solution of the homogeneous equation can be obtained directly from the \emph{characteristic equation}
+\begin{equation}
+\label{6.25}
+P(\lambda )=\lambda ^{n}+a_{n-1}\lambda ^{n-1}+\ldots +a_{0}=0.
+\end{equation}
+It has the form
+\begin{equation}
+\begin{array}{lll}
+\varphi _{jedn}(t) & = & (C_{1,0}+C_{1,1}t+\ldots
++C_{1,k_{1}-1}t^{k_{r}-1})e^{\lambda _{1}t}+\ldots \\
+&  & +(C_{r,0}+\ldots +C_{r,k_{r}-1}t^{k_{r}-1})e^{\lambda _{r}t},%
+\end{array}
+\label{6.26}
+\end{equation}
+where $\lambda _{j}$ are the roots of the characteristic equation of multiplicity $k_j$; in case of complex pairs of elements $\lambda _{j}=\bar{\lambda}_{j+1}=\alpha _{j}+i\beta _{j}$, $i=\sqrt{-1}$, appropriate coefficients in the sum \eqref{6.26} are coupled, $C_{j+1,l}=\bar{C}_{j,l}$, and these two components give the expression
+$$
+D_{j,l}t^{l}e^{\alpha _{j}t}\cos (\beta _{j}t)+E_{j,l}t^{l}e^{\alpha
+	_{j}t}\sin (\beta _{j}t)
+$$
+(with constants $D_{j,l}$ and $E_{j,l}$).
+
+There is also a special recipe for the solution of the inhomogeneous equation \eqref{6.22} with constant coefficients, in case when the function $b (t)$ (on the right side of the equation) is the so-called a \emph{quasi-polynomial} of the form
+\begin{equation}
+\label{6.27}
+b(t)=e^{\mu t}p(t).
+\end{equation}
+Here $\mu$ is called the exponent of the quasi-polynomial and $p (t)$ is the ordinary polynomial of the rank $m$, called the quasi-polynomial degree. Also the functions of the form $e^{\nu t}\cos (\xi t)p(t)$ and $e^{\nu t}\sin
+(\xi t)p(t)$ are, respectively, the real and imaginary part of the quasi-polynomial with the complex exponent $\mu =\nu +i\xi$.
+
+\begin{theorem}
+	The general solution of the homogeneous equation has the form \eqref{6.26}.
+	
+	If the right side of the inhomogeneous equation \eqref{6.22} has the form \eqref{6.27} and the exponent $\mu$ of the quasi-polynomial is the element of the characteristic equation \eqref{6.25} of multiplicity $k$, then a special solution of the equation can be selected as a quasi-polynomial
+	$$
+	\varphi _{part}=t^{k}e^{\mu t}q(t),
+	$$
+	where $q (t)$ is polynomial of  rank $m=\deg p(t)$.
+\end{theorem}
+
+The following theorem, derived from J. Liouville, is a generalization of the elementary algebraic identity
+$$
+\det \exp A=\exp \textrm{tr}A
+$$
+and has a huge application in Qualitative Theory.
+
+\begin{theorem}\label{theo:6.23}
+	\emph{(Liouville).}
+	The Wronskian $W (t)$ associated with the fundamental matrix $\mathcal{F}(t)$ of the system \eqref{6.21} (formula \eqref{6.23}) satisfies the equation
+	$$
+	\dot{W}=\textrm{tr}A(t)\cdot W.
+	$$
+\end{theorem}
+
+The proof is reduced to count the boundary
+$$
+\lim_{s\rightarrow 0}\frac{\det (I+sA(t))-1}{s},
+$$
+since $\mathcal{F}(t+s) = (I+sA(t)) \mathcal{F}(t) + O(s^{2})$. It is easy to check using the standard definition of determinant $\det \left(I + sA\right) = \sum \left(-1\right)^{\pi} \prod \left(I + sA\right)_{j, \pi(j)}$, that members derived from non-trivial permutations $\pi$ give a contribution of order $s^2$. The member $\prod \left(I + sA\right)_{j, j} = \prod (1+sa_{jj})$ is $1+s\sum a_{jj} + O(s^{2})$.
+
+In the case where the fundamental matrix $\mathcal{F}(t)$ satisfies the property $\mathcal{F}(t_{0})=I$, the Wronskian determinant has the natural interpretation ($n$-dimensional) of the volume of the parallelepiped spanned by the vectors $f_{i}(t)=g_{t_{0}}^{t}e_{i}$, $i=1,\ldots n$, where $g_{t_{0}}^{t}$ is a 2-parameter family of transformations in the evolution of the system and $\left( e_{i}\right) $ is a standard basis in $\mathbb{R}^{n}$. In other words, there is the identity
+\begin{equation}
+\label{6.28}
+\left\vert g_{t_{0}}^{t}(V)\right\vert =W(t)\cdot \left\vert V\right\vert ,%
+\text{ \ \ \ }\frac{d}{dt}\left\vert g_{t_{0}}^{t}(V)\right\vert =\textrm{tr}%
+A(t)\cdot \left\vert g_{t_{0}}^{t}(V)\right\vert ,
+\end{equation}
+for the area $V\subset \mathbb{R}^{n}$, where $\left\vert V\right\vert $ is the volume.
+
+Let us apply this observation to the equation in variations with the initial conditions \eqref{6.13} in the case of the autonomous vector field $\dot{x}=v(x)$. This equation in variations has the form $\dot{y}=A(t)y$, where $A(t)=\frac{\partial v}{\partial x}(\varphi _{0}(t))$ is the matrix of partial derivatives $\partial v_{i}/\partial x_{j}$ of the $v_{i}$ components of the field along the distinguished solution $\varphi _{0}(t)$. It's easy to check the identity
+\begin{equation}
+\label{6.29}
+\textrm{tr}A(t)=\sum_{i=1}^{n}\frac{\partial v_{i}}{\partial x_{i}}(\varphi
+_{0}(t))=\textrm{div\,}v(\varphi _{0}(t),
+\end{equation}
+where $\textrm{div}$ means divergence.
+
+Let $V\subset \mathbb{R}^{n}$ be an area such that the solutions starting from $V$ are determined for times between $0$ and $t$. Divide the $V$ region into rectangular cubes $\Delta _{j}$ with small edge $\varepsilon $ and with highlighted points $z_{j}\in \Delta _{j}$. Under the action of the flow $g^{t}$, these cubes will switch into nonlinear areas $g^{t}(\Delta _{j})$, which are close to parallelepiped spanned by the vectors $\varepsilon \cdot f_{i}(t)$, where each vector $f_{i} (t)$ is, as described above for the transformation $g_{0}^{t}$, associated with the equation in variations along the solution $\varphi _{j}(t)$ starting from $z_{j}$. Then we sum the volume of the areas $g^{t}(\Delta _{j})$ and go to the limit when $\varepsilon
+\to 0$, using the properties \eqref{6.28} and \eqref{6.29}. Therefore, we get the following result (see Figure \ref{fig:A2}).
+
+\begin{figure}[!ht]
+	\centering
+	\includegraphics [scale=1.2]{jtrA2}
+	\caption{Transformation of the area $V$ by the flow $g^t$.}
+	\label{fig:A2}
+\end{figure}
+
+\begin{theorem}
+	For the area $V\subset \mathbb{R}^{n}$ and the flow $g^t$ generated by the autonomous vector field $v (x)$, there is the identity
+	$$
+	\frac{d}{dt}\left\vert g^{t}(V)\right\vert =\int_{g^{t}(V)}\emph{div\,}%
+	v(x)d^{n}x.
+	$$
+	In particular, if $\emph{\textrm{div}}\ v(x) < 0$, then the flow $g^t$ has the property to reduce the volume, and if $\emph{\textrm{div}}\ v(x) > 0$, then the flow has the property to expand the areas.
+\end{theorem}
+
+\subsection*{Tasks}
+\begin{task}
+	According to the constants $M=\sup_{I\times
+		U}\left\vert v(t,x)\right\vert $ and $L=
+	\sup \frac{\left\vert
+		v(t,x_{1})-v(t,x_{2}\right\vert}{\left\vert x_{1}-x_{2}\right\vert} $ (Lipschitz constant), choose $\varepsilon $ in $I_{0}=(t_{0}-\varepsilon
+	,t_{0}+\varepsilon )$ and the radius of balls $U_{0}=$\
+	$B(x_{\ast },r)=\left\{
+	\left\vert x-x_{\ast }\right\vert <r\right\} \subset U$ and $\mathcal{B} (x_{0},R)=\left\{ \varphi :I_{0}\times U_{0}\longmapsto \mathbb{R}^{n}:\sup
+	\left\vert \varphi (t,x_{0})-x_{0}\right\vert <R\right\} $ so that:
+	\begin{enumerate}[(i)]
+		\item $\mathcal{T}:\mathcal{B}(x_{0},R)$ $\longmapsto \mathcal{B}(x_{0},R)$ and
+		\item $\mathcal{T}$ is a contraction on $\mathcal{B}(x_{0},R)$.
+	\end{enumerate}
+	This will complement the proof of Theorem \ref{theo:6.5}.
+\end{task}
+
+\begin{task}
+	Complete the proofs of Theorems \ref{theo:6.7} and \ref{theo:6.8}.
+	
+	Tip: In the proof of Theorem \ref{theo:6.7}, consider the approximations sequence $x=\varphi _{n}(t;x_{0})$, $z=\psi _{n}(t;x_{0})$ for the initial problem $\dot{x}=v(t;x),\dot{z}=\frac{\partial v}{\partial x}(t,x)z$, $x(t_{0})=x_{0}$, $z(t_{0})I$, where $z(t;x_{0})$ takes values in the spaces of the matrices $n \times n$. In the proof of Theorem \ref{theo:6.8}, use Theorem \ref{theo:6.7}.
+\end{task}
+
+\begin{task}
+	Prove that if $v (t, x; \lambda)$ depends analytically on the arguments, then the solution $\varphi (t;x_{0};\lambda )$ is also analytical.
+\end{task}
+
+\begin{task}
+	Complete the proof of Theorem \ref{theo:6.9}.
+\end{task}
+
+\begin{task}
+	Complete the proof of Theorem \ref{theo:6.10}.
+\end{task}
+
+\begin{task}
+	Find the solution of the equation $x^{2}%
+	\frac{dy}{dx}-\cos 2y=1$ satisfying the condition $y(+\infty )=\frac{9\pi }{4}$.
+\end{task}
+
+\begin{task}
+	Solve the equation $\frac{dy}{dx}=\sqrt{%
+		4x+2y-1}.$
+\end{task}
+
+\begin{task}
+	Solve the equation $x\frac{dy}{dx}%
+	=y-xe^{y/x}.$
+\end{task}
+
+\begin{task}
+	Solve the equation $\frac{dy}{dx}%
+	=y^{2}-2/x^{2}.$
+\end{task}
+
+\begin{task}
+	Solve the equation $2ydx+(x^{2}y+1)xdy=0.$
+\end{task}
+
+\begin{task}
+	Solve the equation $xy^{\prime
+	}-2y=2x^{4}.$
+\end{task}
+
+\begin{task}
+	Solve the equation $xydy=(y^{2}+x)dx.$
+\end{task}
+
+\begin{task}
+	Solve the following Riccati equation $y^{\prime }=2xy-y^{2}+5-x^{2}.$
+	
+	Tip: Guess one solution.
+\end{task}
+
+\begin{task}
+	Solve the equation $\frac{dy}{dx}=\frac{%
+		ax^{2}+by^{2}+1}{2xy}.\ $
+	
+	Tip: Look for the integral factor in the form of $x^{\alpha}$.
+\end{task}
+
+\begin{task}
+	Solve the equation $\frac{y}{x}%
+	dx+(y^{3}+\ln x)dy=0.$
+\end{task}
+
+\begin{task}
+	Solve de linear system $\dot{x}=A(t)x+b(t)$, with continuous $A(t)$ and $b(t)$ and with estimates $\left\Vert
+	A(t)\right\Vert \leq C_{1}(t)$ and $\left\vert b(t)\right\vert \leq C_{1}(t)$. Show estimates of $\left\vert \frac{d}{dt}\left\vert x\right\vert
+	^{2}\right\vert \leq 2C_{1}(t)\left\vert x\right\vert
+	^{2}+2C_{2}(t)\left\vert x\right\vert \leq C_{3}(t)\left\vert x\right\vert
+	^{2}$, where the last inequality holds for sufficiently large $\left\vert x\right\vert $ and a certain continuous function $C_{3}(t)$. Deduce from here that solutions can not escape to infinity after a finite time.
+\end{task}
+
+\begin{task}
+	Give a general solution of the equation $\dot{x}=x-y-z,$ $\dot{y}=x+y,$\ $\dot{z}=3x+z.$
+\end{task}
+
+\begin{task}
+	Give a general solution of the equation $\dot{x} = x-y+1/\cos t,$\ $\dot{y}=2x-y.$
+\end{task}
+
+\begin{task}
+	Give a general solution of the equation $\frac{d^{4}}{dt^{4}}x +4x=0.$
+\end{task}
+
+\begin{task}
+	Give a general solution of the equation $\ddot{x}+2\dot{x}+x=t(e^{-t}-\cos t)$.
+\end{task}
+
+\begin{task}
+	For which $k$ and $\omega$ the equation $\ddot{x} +k^{2}x= \sin \omega t$ has at least one periodic solution?
+\end{task}

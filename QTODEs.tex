@@ -1,0 +1,83 @@
+\documentclass[a4paper,12pt]{book}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{multirow}
+\usepackage{physics}
+\usepackage{enumerate}
+%\usepackage{xr-hyper}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage[super]{nth}
+\usepackage[margin=1in]{geometry}
+%\usepackage{units}	% To use \nicefrac
+\usepackage[nottoc,notlot,notlof]{tocbibind}	% Include Bibliography in Table of Contents unnumbered 
+
+\hypersetup{
+	%hidelinks,		% Remove ugly borders around clickable cross-references and hyperlinks
+	linktoc=all,     % set to all if you want both sections and subsections linked
+	%colorlinks=true, % set true if you want colored links
+	%linkcolor=blue,  %choose some color if you want links to stand out
+}
+
+% Header format
+\geometry{headheight=15pt}
+\pagestyle{fancy}
+\fancyhf{} % to clear existing header/footer if you don't want it
+\fancyhead[LE,RO]{\thepage}
+\fancyhead[LO]{\rightmark}
+\fancyhead[RE]{\leftmark}
+\let\MakeUppercase\relax	% Header not in uppercase
+
+\interfootnotelinepenalty=10000
+
+\def\labelitemi{--}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{task}[theorem]{Task}
+\newtheorem{hypothesis}[theorem]{Hypothesis}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\begin{document}
+
+\author{Raul Murillo Montero}
+\title{Qualitative Theory of Ordinary Differential Equations\\
+\Large   Notes from Henryk Żoł\c{a}dek\\
+\large   Version 1.0}
+\date{October 2017}
+
+\frontmatter
+\include{title_page}
+\tableofcontents
+
+\mainmatter
+\include{chapter00}
+\include{chapter01}
+\include{chapter02}
+\include{chapter03}
+\include{chapter04}
+\include{chapter05}
+\include{chapter06}
+
+\backmatter
+% bibliography, glossary and index would go here.
+\bibliographystyle{plain}
+\bibliography{refs}
+
+\end{document}

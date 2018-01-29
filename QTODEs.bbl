@@ -1,0 +1,127 @@
+\begin{thebibliography}{10}
+
+\bibitem{ALG1}
+A.~A. Andronov, E.~A. Leontovich, I.~I. Gordon, and A.~G. Maier.
+\newblock {\em Qualitative theory of second-order dynamic systems}.
+\newblock Halsted Press (A division of John Wiley\ % \& Sons), New
+  York-Toronto, Ont., 1973.
+\newblock Translated from the Russian by D. Louvish.
+
+\bibitem{ALG2}
+A.~A. Andronov, E.~A. Leontovich, I.~I. Gordon, and A.~G. Maier.
+\newblock {\em Theory of bifurcations of dynamic systems on a plane}.
+\newblock Halsted Press [A division of John Wiley\ % \& Sons], New
+  York-Toronto, Ont., 1973.
+\newblock Translated from the Russian by D. Louvish.
+
+\bibitem{Ar1}
+W.~I. Arnold.
+\newblock {\em Równania różniczkowe zwyczajne}.
+\newblock Państwowe Wydawnictwo Naukowe (PWN), Warszawa, 1975.
+\newblock Translated from the first Russian edition by Alicja Derkowska and
+  Gabriel Derkowski.
+
+\bibitem{Ar3}
+W.~I. Arnold.
+\newblock {\em Metody matematyczne mechaniki klasycznej}.
+\newblock Państwowe Wydawnictwo Naukowe (PWN), Warszawa, 1981.
+\newblock Translated from the Russian by Piotr Kucharczyk.
+
+\bibitem{Ar2}
+W.~I. Arnold.
+\newblock {\em Teoria równań różniczkowych}.
+\newblock Państwowe Wydawnictwo Naukowe (PWN), Warszawa, 1983.
+\newblock Translated from the Russian by Maciej Wojtkowski.
+
+\bibitem{ArPl}
+D.~K. Arrowsmith and C.~M. Place.
+\newblock {\em Ordinary differential equations. A qualitative approach with
+  applications}.
+\newblock Chapman and Hall Mathematics Series. Chapman\ \& Hall, London, 1982.
+
+\bibitem{BaLe}
+N.~N. Bautin and E.~A. Leontovich.
+\newblock {\em Metody i priemy kachestvennogo issledovaniya dinamicheskikh
+  sistem na ploskosti}, volume~11 of {\em Spravochnaya Matematicheskaya
+  Biblioteka}.
+\newblock Nauka, Moscow, 1990.
+
+\bibitem{BNF}
+N.~V. Butenin, Yu.~I. Neimark, and N.~A. Fufaev.
+\newblock {\em Vvedenie v teoriyu nelineinykh kolebanii}.
+\newblock Nauka, Moscow, 1987.
+
+\bibitem{Dev}
+R.~L. Devaney.
+\newblock {\em An introduction to chaotic dynamical systems}.
+\newblock The Benjamin/Cummings Publishing Co. Inc., Menlo Park, CA, 1986.
+
+\bibitem{Fil}
+A.~F. Filippov.
+\newblock {\em Sbornik zadach po differentsialnym uravneniyam}.
+\newblock Nauka, Moscow, 1973.
+
+\bibitem{GuHo}
+J.~Guckenheimer and P.~Holmes.
+\newblock {\em Nonlinear oscillations, dynamical systems, and bifurcations of
+  vector fields}, volume~42 of {\em Applied Mathematical Sciences}.
+\newblock Springer-Verlag, New York, 1990.
+
+\bibitem{Hale}
+J.~K. Hale.
+\newblock {\em Ordinary differential equations}.
+\newblock Robert E. Krieger Publishing Co. Inc., Huntington, N.Y., second
+  edition, 1980.
+
+\bibitem{Hart}
+P.~Hartman.
+\newblock {\em Ordinary differential equations}, volume~38 of {\em Classics in
+  Applied Mathematics}.
+\newblock Society for Industrial and Applied Mathematics (SIAM), Philadelphia,
+  PA, 2002.
+
+\bibitem{MaMc}
+J.~E. Marsden and M.~McCracken.
+\newblock {\em The Hopf bifurcation and its applications}.
+\newblock Springer-Verlag, New York, 1976.
+\newblock With contributions by P. Chernoff, G. Childs, S. Chow, J. R. Dorroh,
+  J. Guckenheimer, L. Howard, N. Kopell, O. Lanford, J. Mallet-Paret, G. Oster,
+  O. Ruiz, S. Schecter, D. Schmidt and S. Smale, Applied Mathematical Sciences,
+  Vol. 19.
+
+\bibitem{Pal}
+A.~Palczewski.
+\newblock {\em Równania różniczkowe zwyczajne}.
+\newblock Wydawnictwa Naukowo--Techniczne (WNT), Warszawa, 1999.
+
+\bibitem{Pon}
+L.~S. Pontrjagin.
+\newblock {\em Równania różniczkowe zwyczajne}.
+\newblock Państwowe Wydawnictwo Naukowe (PWN), Warszawa, 1964.
+
+\bibitem{Rob}
+C.~Robinson.
+\newblock {\em Dynamical systems. Stability, symbolic dynamics, and chaos}.
+\newblock Studies in Advanced Mathematics. CRC Press, Boca Raton, FL, 1995.
+
+\bibitem{Szl}
+W.~Szlenk.
+\newblock {\em Wstêp do teorii gładkich układów dynamicznych}, volume~56 of
+  {\em Biblioteka Matematyczna}.
+\newblock Państwowe Wydawnictwo Naukowe (PWN), Warszawa, 1982.
+
+\bibitem{Zol1}
+H.~Żołądek.
+\newblock Twierdzenie kołmogorowa--arnolda--mosera i ograniczony problem
+  trzech ciał.
+\newblock {\em Wiadomomości Matematyczne}, 29:47--56, 1990.
+
+\bibitem{Zol2}
+H.~Żołądek.
+\newblock {\em The monodromy group}, volume~67 of {\em Instytut Matematyczny
+  Polskiej Akademii Nauk. Monografie Matematyczne (New Series) [Mathematics
+  Institute of the Polish Academy of Sciences. Mathematical Monographs (New
+  Series)]}.
+\newblock Birkh\"{a}user Verlag, Basel, 2006.
+
+\end{thebibliography}
